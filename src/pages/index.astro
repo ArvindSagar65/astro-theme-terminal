@@ -1,29 +1,405 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PostCard from '../components/PostCard.astro';
-import { getCollection } from 'astro:content';
-
-const posts = (await getCollection('posts'))
-  .filter(post => !post.data.draft)
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 ---
 
-<BaseLayout title="Terminal">
-  <div class="index-content framed">
-    <h1 id="hello-there">Hello there!</h1>
-    <p>Welcome to the Astro Terminal theme! This is a port of the popular Hugo Terminal theme by panr, bringing the same retro terminal aesthetic to Astro.</p>
-    <p>
-      You can customise the colour scheme using panr's <a href="https://panr.github.io/terminal-css/"><strong>Terminal.css</strong></a> 
-      generator - all generated schemes are fully compatible with this theme.
-    </p>
-    <p>
-      <a href="https://panr.github.io/terminal-css/">
-        <img src="https://panr.github.io/hugo-theme-terminal-demo/img/terminal-css.png" alt="Terminal.css Preview" />
-      </a>
-    </p>
-  </div>
-  
-  <div class="posts">
-    {posts.map((post) => <PostCard post={post} />)}
-  </div>
+<BaseLayout title="Arvind Sagar | Portfolio" description="Computer Science student passionate about cybersecurity, Linux systems, and building secure, scalable infrastructure.">
+  <!-- About Me Section -->
+  <section id="about" class="portfolio-section">
+    <div class="about-container">
+      <div class="avatar-wrapper">
+        <img src={`${base}profile.png`} alt="Arvind Sagar" class="profile-avatar" />
+      </div>
+      <div class="about-bio">
+        <h3>Hi, I'm Arvind Sagar</h3>
+        <p>
+          Passionate Computer Science student with a strong interest in cybersecurity and Linux systems.
+          Enthusiastic about network security, system hardening, and building secure, scalable infrastructure,
+          with a proactive mindset and a strong drive for continuous learning.
+        </p>
+        <p>
+          📍 Sahyadri College of Engineering & Management, Mangalore &nbsp;|&nbsp;
+          📧 <a href="mailto:arvindsagar7350@gmail.com">arvindsagar7350@gmail.com</a> &nbsp;|&nbsp;
+          📞 +91-9380803604
+        </p>
+        <div class="tech-tags">
+          <span class="tech-badge">JavaScript</span>
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Bash</span>
+          <span class="tech-badge">C/C++</span>
+          <span class="tech-badge">React</span>
+          <span class="tech-badge">Node.js</span>
+          <span class="tech-badge">Docker</span>
+          <span class="tech-badge">Linux</span>
+          <span class="tech-badge">Nmap</span>
+          <span class="tech-badge">Burp Suite</span>
+          <span class="tech-badge">Metasploit</span>
+          <span class="tech-badge">AWS</span>
+          <span class="tech-badge">Nginx</span>
+          <span class="tech-badge">Tailscale</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects and Competitions Section -->
+  <section id="projects" class="portfolio-section">
+    <h2>Projects & Competitions</h2>
+
+    <div class="grid-1-2">
+      <!-- Projects Grid -->
+      <div>
+        <h3>Projects</h3>
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <div class="portfolio-card">
+            <h3>Armed Forces Welfare Management System</h3>
+            <div class="tech-tags" style="margin-bottom: 10px; margin-top: 0;">
+              <span class="tech-badge">Next.js</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">Socket.io</span>
+              <span class="tech-badge">MongoDB</span>
+            </div>
+            <p class="portfolio-card-desc">
+              Comprehensive digital solution for armed forces personnel featuring welfare schemes, emergency alerts,
+              grievance handling, and a community marketplace. Implemented real-time emergency notifications and
+              GPS-based location sharing using Socket.io.
+            </p>
+            <div class="portfolio-card-links">
+              <a href="https://github.com/ArvindSagar65" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>Home Server Infrastructure</h3>
+            <div class="tech-tags" style="margin-bottom: 10px; margin-top: 0;">
+              <span class="tech-badge">Ubuntu Server</span>
+              <span class="tech-badge">Nginx</span>
+              <span class="tech-badge">Tailscale</span>
+            </div>
+            <p class="portfolio-card-desc">
+              Architected a personal lab environment using Ubuntu Live Server to host web services and internal tools.
+              Configured Nginx reverse proxy for efficient traffic routing and SSL management. Integrated Tailscale
+              mesh networking for secure, encrypted remote access.
+            </p>
+            <div class="portfolio-card-links">
+              <a href="https://github.com/ArvindSagar65" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>My Drive</h3>
+            <div class="tech-tags" style="margin-bottom: 10px; margin-top: 0;">
+              <span class="tech-badge">MinIO</span>
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">FileSystem API</span>
+            </div>
+            <p class="portfolio-card-desc">
+              Personal cloud storage solution featuring secure file uploads, directory management, and downloads.
+            </p>
+            <div class="portfolio-card-links">
+              <a href="https://github.com/ArvindSagar65" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>Braille Converter</h3>
+            <div class="tech-tags" style="margin-bottom: 10px; margin-top: 0;">
+              <span class="tech-badge">JavaScript</span>
+              <span class="tech-badge">Accessibility</span>
+            </div>
+            <p class="portfolio-card-desc">
+              Utility to translate standard alphanumeric text into Braille patterns for accessibility use cases.
+            </p>
+            <div class="portfolio-card-links">
+              <a href="https://github.com/ArvindSagar65" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+
+          <div class="portfolio-card">
+            <h3>SCEM EvMan (Contributor)</h3>
+            <div class="tech-tags" style="margin-bottom: 10px; margin-top: 0;">
+              <span class="tech-badge">Node.js</span>
+              <span class="tech-badge">Express</span>
+              <span class="tech-badge">JavaScript</span>
+            </div>
+            <p class="portfolio-card-desc">
+              Event management platform for campus logistics and technical evaluations. Optimized backend routes
+              for participant data retrieval and test result processing.
+            </p>
+            <div class="portfolio-card-links">
+              <a href="https://github.com/ArvindSagar65" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Competitions & Activities -->
+      <div>
+        <h3>Competitions & Hackathons</h3>
+        <div class="competitions-list">
+          <div class="competition-item">
+            <div class="item-header">
+              <span class="item-title">University CTF 2024 — Binary Badlands</span>
+              <span class="item-meta">HackTheBox</span>
+            </div>
+            <p class="item-detail">
+              Secured <strong>410th rank out of 1200+</strong> teams in an international competitive hacking tournament. Focus on cybersecurity challenges.
+            </p>
+          </div>
+
+          <div class="competition-item">
+            <div class="item-header">
+              <span class="item-title">DevHost 2024 — Hacknight</span>
+              <span class="item-meta">SOSC, SCEM</span>
+            </div>
+            <p class="item-detail">
+              Participated in the annual flagship hackathon organized by Sahyadri Open Source Community.
+            </p>
+          </div>
+
+          <div class="competition-item">
+            <div class="item-header">
+              <span class="item-title">Skill Sangam 2024</span>
+              <span class="item-meta">TCE</span>
+            </div>
+            <p class="item-detail">
+              Took part in the inter-college technical competition organized by TCE.
+            </p>
+          </div>
+
+          <div class="competition-item">
+            <div class="item-header">
+              <span class="item-title">Srinaton 2.0</span>
+              <span class="item-meta">Hackathon</span>
+            </div>
+            <p class="item-detail">
+              Participated in the Srinaton 2.0 hackathon, collaborating on engineering solutions under time constraints.
+            </p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 40px;">Experience</h3>
+        <div class="competitions-list">
+          <div class="competition-item">
+            <div class="item-header">
+              <span class="item-title">Event Lead — DevHost 2025</span>
+              <span class="item-meta">Jan 2025 – Present</span>
+            </div>
+            <p class="item-detail">
+              SOSC – Sahyadri Open Source Community. Managing event logistics, technical workshops, and participant engagement for the annual flagship tech fest.
+            </p>
+          </div>
+
+          <div class="competition-item">
+            <div class="item-header">
+              <span class="item-title">Core Team Member — GDG On Campus SCEM</span>
+              <span class="item-meta">Sep 2025 – Present</span>
+            </div>
+            <p class="item-detail">
+              Lead strategic event planning and technical learning initiatives. Gemini Student Ambassador of Sahyadri College of Engineering and Management.
+            </p>
+          </div>
+
+          <div class="competition-item">
+            <div class="item-header">
+              <span class="item-title">Core Team Member — SOSC</span>
+              <span class="item-meta">Mar 2024 – Present</span>
+            </div>
+            <p class="item-detail">
+              Contributed to open-source projects and mentored juniors in Git/GitHub workflows. Served as Volunteer & Mentor for HackHarbour 3.0, delivering workshops on Docker and Python.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="portfolio-section">
+    <h2>Certifications</h2>
+    <div class="cert-grid">
+
+      <div class="cert-card">
+        <a href={`${base}certifications/Certificate -1-1.png`} target="_blank" rel="noopener">
+          <img src={`${base}certifications/Certificate -1-1.png`} alt="Google Foundations of Cybersecurity" class="cert-img" />
+        </a>
+        <div class="cert-info">
+          <p class="cert-title">Foundations of Cybersecurity</p>
+          <p class="cert-issuer">Google / Coursera &mdash; Dec 2024</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <a href={`${base}certifications/6891a829-7272-4a99-8937-ef85942985ae-1.png`} target="_blank" rel="noopener">
+          <img src={`${base}certifications/6891a829-7272-4a99-8937-ef85942985ae-1.png`} alt="Cyber Security Foundation Certification" class="cert-img" />
+        </a>
+        <div class="cert-info">
+          <p class="cert-title">Cyber Security Foundation</p>
+          <p class="cert-issuer">Infosys Springboard &mdash; Apr 2026</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <a href={`${base}certifications/7765effe-c9f5-4c32-94a4-00c9fbea9ce8-1.png`} target="_blank" rel="noopener">
+          <img src={`${base}certifications/7765effe-c9f5-4c32-94a4-00c9fbea9ce8-1.png`} alt="TechA Ethical Hacking Python Programmer Certification" class="cert-img" />
+        </a>
+        <div class="cert-info">
+          <p class="cert-title">Ethical Hacking Python Programmer</p>
+          <p class="cert-issuer">Infosys Springboard &mdash; Apr 2026</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <a href={`${base}certifications/220334b3-ae6d-407f-9aa5-7e9d5472e750-1.png`} target="_blank" rel="noopener">
+          <img src={`${base}certifications/220334b3-ae6d-407f-9aa5-7e9d5472e750-1.png`} alt="Fundamentals of Information Security" class="cert-img" />
+        </a>
+        <div class="cert-info">
+          <p class="cert-title">Fundamentals of Information Security</p>
+          <p class="cert-issuer">Infosys Springboard &mdash; Apr 2026</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <a href={`${base}certifications/52a7d06e-e66f-4e81-a8f6-555c588ed217-1.png`} target="_blank" rel="noopener">
+          <img src={`${base}certifications/52a7d06e-e66f-4e81-a8f6-555c588ed217-1.png`} alt="Introduction to Cyber Security" class="cert-img" />
+        </a>
+        <div class="cert-info">
+          <p class="cert-title">Introduction to Cyber Security</p>
+          <p class="cert-issuer">Infosys Springboard &mdash; Apr 2026</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <a href={`${base}certifications/7522be53-b548-4abd-b81d-61b3459cbc5c-1.png`} target="_blank" rel="noopener">
+          <img src={`${base}certifications/7522be53-b548-4abd-b81d-61b3459cbc5c-1.png`} alt="Fundamentals of Cryptography" class="cert-img" />
+        </a>
+        <div class="cert-info">
+          <p class="cert-title">Fundamentals of Cryptography</p>
+          <p class="cert-issuer">Infosys Springboard &mdash; Apr 2026</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <a href={`${base}certifications/f114c79d-cb6e-4b23-846a-d1c832f574ac-1.png`} target="_blank" rel="noopener">
+          <img src={`${base}certifications/f114c79d-cb6e-4b23-846a-d1c832f574ac-1.png`} alt="Complete Ethical Hacking Course" class="cert-img" />
+        </a>
+        <div class="cert-info">
+          <p class="cert-title">Complete Ethical Hacking Course</p>
+          <p class="cert-issuer">Infosys Springboard &mdash; Apr 2026</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <a href={`${base}certifications/bd2bcaaa-063d-4616-b3bf-03355a91f33e-1.png`} target="_blank" rel="noopener">
+          <img src={`${base}certifications/bd2bcaaa-063d-4616-b3bf-03355a91f33e-1.png`} alt="Ethical Hacking for Beginners" class="cert-img" />
+        </a>
+        <div class="cert-info">
+          <p class="cert-title">Ethical Hacking for Beginners</p>
+          <p class="cert-issuer">Infosys Springboard &mdash; Apr 2026</p>
+        </div>
+      </div>
+
+      <div class="cert-card">
+        <a href={`${base}certifications/python-certification-1.png`} target="_blank" rel="noopener">
+          <img src={`${base}certifications/python-certification-1.png`} alt="Basics of Python" class="cert-img" />
+        </a>
+        <div class="cert-info">
+          <p class="cert-title">Basics of Python</p>
+          <p class="cert-issuer">Infosys Springboard &mdash; Apr 2026</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Articles & Writeups Section -->
+  <section id="writings" class="portfolio-section">
+    <h2>Articles & Writeups</h2>
+    <div class="grid-2">
+
+      <!-- Articles -->
+      <div>
+        <h3>📝 Articles</h3>
+        <div class="competition-item">
+          <div class="item-header">
+            <span class="item-title">Coming Soon — Article Title</span>
+            <span class="item-meta">~5 min read</span>
+          </div>
+          <p class="item-detail">
+            A short description of what this article covers. Topics may include cybersecurity, Linux, networking, or developer tools.
+          </p>
+          <p style="margin-top: 8px; font-size: 0.9rem;">
+            <a href="#" style="font-weight: bold; text-decoration: underline; opacity: 0.5; pointer-events: none;">Read Article ↗</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Writeups -->
+      <div>
+        <h3>🔐 CTF Writeups</h3>
+        <div class="competition-item">
+          <div class="item-header">
+            <span class="item-title">Coming Soon — Challenge Name</span>
+            <span class="item-meta">HackTheBox / TryHackMe</span>
+          </div>
+          <p class="item-detail">
+            Writeup for a CTF challenge covering exploitation techniques, tools used, and step-by-step methodology.
+          </p>
+          <p style="margin-top: 8px; font-size: 0.9rem;">
+            <a href="#" style="font-weight: bold; text-decoration: underline; opacity: 0.5; pointer-events: none;">Read Writeup ↗</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact Me Section -->
+  <section id="contact" class="portfolio-section">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      <div>
+        <form class="contact-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Message sent! I\'ll get back to you soon.');">
+          <div class="contact-form-inner">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your Name" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="your.email@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+            </div>
+            <div>
+              <button type="submit">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="contact-info">
+        <h3>Get in Touch</h3>
+        <p>
+          Feel free to reach out for collaboration opportunities, open-source contributions, cybersecurity discussions, or just to say hello!
+        </p>
+        <div class="social-links">
+          <a class="social-link-item" href="mailto:arvindsagar7350@gmail.com">
+            <span>✉️</span> <strong>arvindsagar7350@gmail.com</strong>
+          </a>
+          <a class="social-link-item" href="https://github.com/ArvindSagar65" target="_blank" rel="noopener">
+            <span>🐙</span> <strong>github.com/ArvindSagar65</strong>
+          </a>
+          <a class="social-link-item" href="https://linkedin.com/in/arvind-sagar-a03162293" target="_blank" rel="noopener">
+            <span>👤</span> <strong>linkedin.com/in/arvind-sagar-a03162293</strong>
+          </a>
+          <a class="social-link-item" href="tel:+919380803604">
+            <span>📞</span> <strong>+91-9380803604</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

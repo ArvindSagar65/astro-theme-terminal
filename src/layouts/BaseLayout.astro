@@ -36,6 +36,17 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     
     <link rel="sitemap" href={`${base}sitemap-index.xml`} />
     <link rel="alternate" type="application/rss+xml" title="RSS" href={`${base}rss.xml`} />
+    
+    <script is:inline>
+      (function() {
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme === 'light' || (!storedTheme && !window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div class="container center">
@@ -44,42 +55,36 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
           <div class="header__logo">
             <a href={base}>
               <div class="logo">
-                Terminal
+                Arvind Sagar
               </div>
             </a>
           </div>
-          <ul class="menu menu--mobile">
-            <li class="menu__trigger">Menu ▾</li>
-            <li>
-              <ul class="menu__dropdown">
-                <li><a href={`${base}about/`}>About</a></li>
-                <li><a href={`${base}posts/showcase/`}>Showcase</a></li>
-                <li><a href={`${base}posts/`}>Posts</a></li>
-                <li><a href={`${base}tags/`}>Tags</a></li>
-                <li><a href={`${base}posts/rich-content/`}>Rich Content</a></li>
-                <li><a href={`${base}posts/code-blocks-examples/`}>Code Examples</a></li>
-              </ul>
-            </li>
-          </ul>
+          <div class="header__controls">
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+              <span class="theme-toggle-icon">🌓</span>
+            </button>
+            <ul class="menu menu--mobile">
+              <li class="menu__trigger">Menu ▾</li>
+              <li>
+                <ul class="menu__dropdown">
+                  <li><a href={`${base}#about`}>About</a></li>
+                  <li><a href={`${base}#projects`}>Projects</a></li>
+                  <li><a href={`${base}#certifications`}>Certifications</a></li>
+                  <li><a href={`${base}#writings`}>Articles & Writeups</a></li>
+                  <li><a href={`${base}#contact`}>Contact</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
         </div>
         
         <nav class="navigation-menu">
           <ul class="navigation-menu__inner menu--desktop">
-            <li><a href={`${base}about/`}>About</a></li>
-            <li><a href={`${base}posts/showcase/`}>Showcase</a></li>
-            <li>
-              <ul class="menu">
-                <li class="menu__trigger">Show more ▾</li>
-                <li>
-                  <ul class="menu__dropdown">
-                    <li><a href={`${base}posts/`}>Posts</a></li>
-                    <li><a href={`${base}tags/`}>Tags</a></li>
-                    <li><a href={`${base}posts/rich-content/`}>Rich Content</a></li>
-                    <li><a href={`${base}posts/code-blocks-examples/`}>Code Examples</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
+            <li><a href={`${base}#about`}>About</a></li>
+            <li><a href={`${base}#projects`}>Projects</a></li>
+            <li><a href={`${base}#certifications`}>Certifications</a></li>
+            <li><a href={`${base}#writings`}>Articles & Writeups</a></li>
+            <li><a href={`${base}#contact`}>Contact</a></li>
           </ul>
         </nav>
       </header>
@@ -91,18 +96,16 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       <footer class="footer">
         <div class="footer__inner">
           <div class="copyright">
-            <span>© 2025 Powered by <a href="https://astro.build">Astro</a></span>
+            <span>© 2026 Arvind Sagar</span>
             <span class="separator">::</span>
-            <span>Theme made by <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">panr</a></span>
-            <span class="separator">::</span>
-            <span>Ported by <a href="https://github.com/dennisklappe">Dennis Klappe</a></span>
+            <span>Made with <a href="https://astro.build">Astro</a></span>
           </div>
         </div>
       </footer>
     </div>
     
     <script>
-      // Menu functionality
+      // Menu and Theme toggle functionality
       (() => {
         const container = document.querySelector(".container");
         const menus = document.querySelectorAll(".menu");
@@ -150,6 +153,17 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
             dropdown.addEventListener("click", e => e.stopPropagation());
           }
         });
+
+        // Theme Toggle Click Handler
+        const themeToggle = document.querySelector("#theme-toggle");
+        if (themeToggle) {
+          themeToggle.addEventListener("click", () => {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const newTheme = currentTheme === "light" ? "dark" : "light";
+            document.documentElement.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+          });
+        }
       })();
     </script>
   </body>

@@ -64,3 +64,30 @@
     margin-right: 10px;
   }
 }
+
+.header__controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 2px solid var(--accent) !important;
+  color: var(--accent);
+  cursor: pointer;
+  padding: 0 !important;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  height: 32px;
+  width: 32px;
+  flex-shrink: 0;
+  border-radius: var(--radius);
+}
+
+.theme-toggle:hover {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+}

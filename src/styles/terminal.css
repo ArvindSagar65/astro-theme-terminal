@@ -1,13 +1,19 @@
 /* Fira Code: https://github.com/tonsky/FiraCode */
 @import url('https://cdn.staticdelivr.com/gfonts/css2?family=Fira+Code:wght@300..700&display=swap');
 
-:root {
-  --background: #1a170f;
+:root, :root[data-theme="dark"] {
+  --background: #111112;
   --foreground: #eceae5;
   --accent: #eec35e;
-  --radius: 0;
+  --radius: 4px;
   --font-size: 1rem;
   --line-height: 1.54em;
+}
+
+:root[data-theme="light"] {
+  --background: #fafaf9;
+  --foreground: #1c1917;
+  --accent: #2563eb;
 }
 
 html {
