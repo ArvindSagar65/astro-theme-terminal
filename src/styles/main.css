@@ -269,6 +269,20 @@ ul ul {
   font-family: monospace;
 }
 
+a.tech-badge {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+a.tech-badge:hover {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.portfolio-card-links a.tech-badge {
+  text-decoration: none;
+}
+
 /* Grid Layout for Projects & Articles */
 .grid-2 {
   display: grid;
