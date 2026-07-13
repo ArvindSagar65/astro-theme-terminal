@@ -1,12 +1,12 @@
 ---
 title: 'Code blocks examples'
-description: 'The Astro Terminal theme uses Shiki as syntax highlighter, providing beautiful and customizable code highlighting.'
+description: 'The terminal theme uses Shiki as syntax highlighter, providing beautiful and customizable code highlighting.'
 pubDate: 2019-03-10
 author: 'Radek'
 tags: []
 ---
 
-The Astro Terminal theme uses Shiki as syntax highlighter, providing beautiful and customizable code highlighting with a monochrome theme that matches the terminal aesthetic.
+The terminal theme uses Shiki as syntax highlighter, providing beautiful and customizable code highlighting with a monochrome theme that matches the terminal aesthetic.
 
 Below you can see many basic presentations of the code blocks you can use depending on your needs.
 

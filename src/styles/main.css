@@ -460,6 +460,24 @@ a.tech-badge:hover {
   .tech-tags {
     justify-content: center;
   }
+
+  .contact-container {
+    text-align: center;
+  }
+
+  .contact-info {
+    align-items: center;
+  }
+
+  .social-links {
+    align-items: center;
+  }
+
+  .social-link-item {
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
 }
 /* Certifications Grid */
 .cert-grid {

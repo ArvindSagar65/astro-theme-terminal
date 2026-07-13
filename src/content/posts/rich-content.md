@@ -6,7 +6,7 @@ author: 'Terminal Theme Authors'
 tags: ['media', 'embeds', 'video']
 ---
 
-This page demonstrates how to embed various types of media content in the Astro Terminal theme, including YouTube videos, Vimeo players, and GitHub code snippets.
+This page demonstrates how to embed various types of media content in the terminal theme, including YouTube videos, Vimeo players, and GitHub code snippets.
 
 ---
 

@@ -1,12 +1,12 @@
 ---
 title: 'Showcase'
-description: 'This article offers a sample of basic Markdown syntax that can be used in Astro content files, also it shows whether basic HTML elements are decorated with CSS in the Astro Terminal theme.'
+description: 'This article offers a sample of basic Markdown syntax that can be used in content files, also it shows whether basic HTML elements are decorated with CSS in the terminal theme.'
 pubDate: 2019-03-11
 author: 'Hugo Authors, Radek'
 tags: []
 ---
 
-This article offers a sample of basic Markdown syntax that can be used in Astro content files, also it shows whether basic HTML elements are decorated with CSS in the Astro Terminal theme.
+This article offers a sample of basic Markdown syntax that can be used in content files, also it shows whether basic HTML elements are decorated with CSS in the terminal theme.
 
 ## Headings
 
